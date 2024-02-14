@@ -7,8 +7,7 @@ distribution : ubuntu for raspberry pi
 version : 22.04
 
 ## Usage
-First, you need to run the makefile.
-It will generate the .ko .dtbo file.
+First, you need to run the makefile.  It will generate the `.ko` `.dtbo` file.
 ```
 make
 ```
@@ -16,8 +15,7 @@ Then, we need to add the device to device tree
 ```
 cp hd44780-i2c.dtbo /boot/firmware/overlays/
 ```
-And modify the /boot/firmware/config.txt
-Add the following command to config.txt
+And modify the /boot/firmware/config.txt  Add the following command to config.txt
 ```
 dtoverlay=hd44780-i2c
 ```
@@ -29,5 +27,5 @@ sudo insmod hd44780.ko
 ```
 You can use the following command communicate to hd44780, it will print to the screen
 ```
-echo Hello > /dev/hd44780_driver
+echo string > /dev/hd44780_driver
 ```
