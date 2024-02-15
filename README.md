@@ -5,7 +5,13 @@ hardware : hd44780 (pcf8574+1602a LCD 16x2 screen)
 distribution : ubuntu for raspberry pi
 
 version : 22.04
-
+## Wiring
+```
+          -- GND        GND         --
+hd44780   -- VCC        5V          --     raspi
+          -- SDA        GPIO2 (SDA) --
+          -- SCL        GPIO3 (SCL) --
+```
 ## Usage
 First, you need to run the makefile.  It will generate the `.ko` `.dtbo` file.
 ```
@@ -15,7 +21,7 @@ Then, we need to add the device to device tree
 ```
 cp hd44780-i2c.dtbo /boot/firmware/overlays/
 ```
-And modify the /boot/firmware/config.txt  Add the following command to config.txt
+And modify the `/boot/firmware/config.txt`  Add the following command to `config.txt`
 ```
 dtoverlay=hd44780-i2c
 ```
