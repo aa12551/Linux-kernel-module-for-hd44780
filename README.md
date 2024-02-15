@@ -33,5 +33,5 @@ sudo insmod hd44780.ko
 ```
 You can use the following command communicate to hd44780, it will print to the screen
 ```
-echo string > /dev/hd44780_driver
+echo string > /dev/hd44780_misc
 ```
